@@ -58,8 +58,8 @@ var ETAPAS = [
 var DOWNLOAD = 'https://www.dropbox.com/scl/fi/hxo406klte3wbsfy8eehd/RIO-RISE-UPDATE.zip?rlkey=fr7zng9nq63po4k3wxqw1swo0&st=ibfmoyon&dl=1';
 var ESPERA = 10;
 var feitas = 0, rodando = false;
-try { feitas = Math.min(ETAPAS.length, parseInt(localStorage.getItem('sm_etapas') || '0', 10) || 0); } catch (e) {}
-function salvar() { try { localStorage.setItem('sm_etapas', String(feitas)); } catch (e) {} }
+try { feitas = Math.min(ETAPAS.length, parseInt(sessionStorage.getItem('sm_etapas') || '0', 10) || 0); } catch (e) {}
+function salvar() { try { sessionStorage.setItem('sm_etapas', String(feitas)); } catch (e) {} }
 function desenhar() {
   var h = '';
   ETAPAS.forEach(function (e, i) {
