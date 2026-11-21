@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0610">
+<title>SOMBRA MODZ — Download</title>
+<meta name="description" content="Complete as etapas e libere o download do RIO RISE UPDATE.">
+<style>
+:root{--bg:#0a0610;--card:#151020;--borda:#2a1f3d;--txt:#f3eefc;--sub:#a99cc4;--roxo:#9b4dff;--verm:#ff2d55;--verde:#22d17a;--yt:#ff0033;--zap:#25d366}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:24px 16px 40px;
+background-image:radial-gradient(circle at 20% 0%,rgba(155,77,255,.25),transparent 45%),radial-gradient(circle at 90% 20%,rgba(255,45,85,.18),transparent 40%)}
+.box{max-width:460px;margin:0 auto}
+.logo{text-align:center;margin-bottom:6px}
+.logo h1{font-size:38px;font-weight:900;letter-spacing:2px;line-height:1;background:linear-gradient(90deg,#c08bff,#ff2d55);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 14px rgba(155,77,255,.55))}
+.logo p{color:var(--sub);font-size:14px;margin-top:8px}
+.arq{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:12px 14px;margin:18px 0 14px}
+.arq .ic{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--roxo),var(--verm));display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+.arq b{display:block;font-size:15px}.arq small{color:var(--sub);font-size:12px}
+.prog{margin:4px 0 16px}.prog .lin{display:flex;justify-content:space-between;font-size:13px;color:var(--sub);margin-bottom:6px}.prog .lin b{color:var(--txt)}
+.barra{height:10px;border-radius:99px;background:#221a33;overflow:hidden}.barra i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--roxo),var(--verm));transition:width .4s}
+.etapa{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:12px;margin-bottom:10px;transition:.25s}
+.etapa .n{width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;background:#221a33;color:var(--sub)}
+.etapa .t{flex:1;min-width:0}.etapa .t b{display:block;font-size:14.5px}.etapa .t small{color:var(--sub);font-size:12px}
+.etapa button{flex:none;border:0;border-radius:10px;padding:10px 14px;font-weight:800;font-size:13px;color:#fff;cursor:pointer;min-width:96px}
+.yt{background:var(--yt)}.zap{background:var(--zap);color:#062!important}
+.etapa.bloq{opacity:.45}.etapa.bloq button{background:#2a2238;color:#8a7da3;cursor:not-allowed}
+.etapa.esp button{background:#2a2238;color:#ffd23f}
+.etapa.ok{border-color:rgba(34,209,122,.5)}.etapa.ok .n{background:var(--verde);color:#04210f}.etapa.ok button{background:transparent;color:var(--verde);border:1px solid rgba(34,209,122,.5)}
+.final{margin-top:16px;width:100%;border:0;border-radius:14px;padding:16px;font-size:17px;font-weight:900;letter-spacing:.5px;color:#fff;cursor:pointer;background:linear-gradient(90deg,var(--roxo),var(--verm));box-shadow:0 8px 30px rgba(255,45,85,.35)}
+.final:disabled{background:#221a33;color:#6f6388;box-shadow:none;cursor:not-allowed}
+.aviso{text-align:center;color:var(--sub);font-size:12px;margin-top:12px;line-height:1.5}
+.reset{display:block;margin:18px auto 0;background:none;border:0;color:#6f6388;font-size:12px;text-decoration:underline;cursor:pointer}
+@media (max-width:360px){.etapa button{min-width:84px;padding:10px}}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo"><h1>SOMBRA MODZ</h1><p>Complete as etapas para liberar o download</p></div>
+  <div class="arq"><div class="ic">📦</div><div><b>RIO RISE UPDATE</b><small>Arquivo .zip · Liberado após todas as etapas</small></div></div>
+  <div class="prog"><div class="lin"><span>Progresso</span><b id="cont">0/7</b></div><div class="barra"><i id="bar"></i></div></div>
+  <div id="lista"></div>
+  <button class="final" id="baixar" disabled>🔒 BAIXAR ARQUIVO</button>
+  <p class="aviso">Toque no botão de cada etapa, faça a ação no app<br>e volte aqui. Cada etapa libera a próxima em 10 segundos.</p>
+  <button class="reset" id="reset">Recomeçar etapas</button>
+</div>
+<script>
+var ETAPAS = [
+  { t: 'Seguir canal SOMBRA MODZ', s: 'Inscreva-se no YouTube', b: 'INSCREVER', c: 'yt', u: 'https://youtube.com/@sombramodzofc' },
+  { t: 'Seguir canal ISAC MODS TV', s: 'Inscreva-se no YouTube', b: 'INSCREVER', c: 'yt', u: 'https://youtube.com/@isacmodstvofcbr' },
+  { t: 'Deixar like no vídeo', s: 'Curta o vídeo 👍', b: 'CURTIR', c: 'yt', u: 'https://youtu.be/IKx6oddsOUU' },
+  { t: 'Comentar no vídeo', s: 'Deixe um comentário 💬', b: 'COMENTAR', c: 'yt', u: 'https://youtu.be/IKx6oddsOUU' },
+  { t: 'Grupo ISAC MODS TV', s: 'Entre no grupo do WhatsApp', b: 'ENTRAR', c: 'zap', u: 'https://chat.whatsapp.com/H6weaa0g3KjLPAWyqgXDh8' },
+  { t: 'Grupo SOMBRA MODZ', s: 'Entre no grupo do WhatsApp', b: 'ENTRAR', c: 'zap', u: 'https://chat.whatsapp.com/HGXknIArEe53zpV6ScpsBf' },
+  { t: 'Canal de vendas', s: 'Siga o canal no WhatsApp', b: 'SEGUIR', c: 'zap', u: 'https://whatsapp.com/channel/0029Vb8vhFa4IBh700OoQv2R' }
+];
+var DOWNLOAD = 'https://www.dropbox.com/scl/fi/hxo406klte3wbsfy8eehd/RIO-RISE-UPDATE.zip?rlkey=fr7zng9nq63po4k3wxqw1swo0&st=ibfmoyon&dl=1';
+var ESPERA = 10;
+var feitas = 0, rodando = false;
+try { feitas = Math.min(ETAPAS.length, parseInt(localStorage.getItem('sm_etapas') || '0', 10) || 0); } catch (e) {}
+function salvar() { try { localStorage.setItem('sm_etapas', String(feitas)); } catch (e) {} }
+function desenhar() {
+  var h = '';
+  ETAPAS.forEach(function (e, i) {
+    var est = i < feitas ? 'ok' : i === feitas ? '' : 'bloq';
+    var txt = i < feitas ? '✓ FEITO' : i === feitas ? e.b : '🔒';
+    h += '<div class="etapa ' + est + '" id="e' + i + '"><div class="n">' + (i < feitas ? '✓' : i + 1) + '</div><div class="t"><b>' + e.t + '</b><small>' + e.s + '</small></div><button class="' + e.c + '" data-i="' + i + '">' + txt + '</button></div>';
+  });
+  document.getElementById('lista').innerHTML = h;
+  document.getElementById('cont').textContent = feitas + '/' + ETAPAS.length;
+  document.getElementById('bar').style.width = (feitas / ETAPAS.length * 100) + '%';
+  var bx = document.getElementById('baixar'); bx.disabled = feitas < ETAPAS.length; bx.textContent = feitas < ETAPAS.length ? '🔒 BAIXAR ARQUIVO' : '⬇ BAIXAR ARQUIVO';
+  [].forEach.call(document.querySelectorAll('.etapa button'), function (b) { b.onclick = function () { clicar(+b.dataset.i, b); }; });
+}
+function clicar(i, b) {
+  if (i < feitas) { window.open(ETAPAS[i].u, '_blank'); return; }
+  if (i !== feitas || rodando) return;
+  window.open(ETAPAS[i].u, '_blank');
+  rodando = true; var n = ESPERA; var el = document.getElementById('e' + i); el.classList.add('esp');
+  b.textContent = '⏳ ' + n + 's';
+  var t = setInterval(function () { n--; b.textContent = '⏳ ' + n + 's'; if (n <= 0) { clearInterval(t); rodando = false; feitas++; salvar(); desenhar(); } }, 1000);
+}
+document.getElementById('baixar').onclick = function () { if (feitas >= ETAPAS.length) window.location.href = DOWNLOAD; };
+document.getElementById('reset').onclick = function () { if (rodando) return; feitas = 0; salvar(); desenhar(); };
+desenhar();
+</script>
+</body>
+</html>
