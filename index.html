@@ -31,6 +31,7 @@ background-image:radial-gradient(circle at 20% 0%,rgba(155,77,255,.25),transpare
 .final{margin-top:16px;width:100%;border:0;border-radius:14px;padding:16px;font-size:17px;font-weight:900;letter-spacing:.5px;color:#fff;cursor:pointer;background:linear-gradient(90deg,var(--roxo),var(--verm));box-shadow:0 8px 30px rgba(255,45,85,.35)}
 .final:disabled{background:#221a33;color:#6f6388;box-shadow:none;cursor:not-allowed}
 .aviso{text-align:center;color:var(--sub);font-size:12px;margin-top:12px;line-height:1.5}
+.tuto{margin-top:22px;background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:14px}.tuto h2{font-size:16px;margin-bottom:4px}.tuto p{color:var(--sub);font-size:12.5px;margin-bottom:12px}.video{position:relative;width:100%;max-width:300px;margin:0 auto;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 8px 30px rgba(155,77,255,.3)}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .reset{display:block;margin:18px auto 0;background:none;border:0;color:#6f6388;font-size:12px;text-decoration:underline;cursor:pointer}
 @media (max-width:360px){.etapa button{min-width:84px;padding:10px}}
 </style>
@@ -43,6 +44,8 @@ background-image:radial-gradient(circle at 20% 0%,rgba(155,77,255,.25),transpare
   <div id="lista"></div>
   <button class="final" id="baixar" disabled>🔒 BAIXAR ARQUIVO</button>
   <p class="aviso">Toque no botão de cada etapa, faça a ação no app<br>e volte aqui. Cada etapa libera a próxima em 10 segundos.</p>
+  <div class="tuto"><h2>📺 Tutorial: como baixar e instalar</h2><p>Assista o vídeo pra ver o passo a passo do download.</p>
+    <div class="video"><iframe src="https://www.youtube.com/embed/KOkOrwc_LX8?rel=0&playsinline=1" title="Tutorial SOMBRA MODZ" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
   <button class="reset" id="reset">Recomeçar etapas</button>
 </div>
 <script>
